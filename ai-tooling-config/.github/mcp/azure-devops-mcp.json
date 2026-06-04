@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "Azure DevOps MCP Server": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@azure-devops/mcp@latest",
+        "<ADO-ORG>"
+      ]
+    }
+  }
+}

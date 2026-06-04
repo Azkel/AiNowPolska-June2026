@@ -1,0 +1,8 @@
+{
+  "releaseId": "2026.06.04-demo",
+  "assembledFrom": "main",
+  "components": {
+    "portal-frontend": { "image": "<ACR-NAME>.azurecr.io/portal-frontend:1.2.0" },
+    "portal-backend": { "image": "<ACR-NAME>.azurecr.io/portal-backend:1.2.0" }
+  }
+}

@@ -1,0 +1,20 @@
+# Assemble release manifest — does not deploy
+trigger:
+  branches:
+    include:
+      - main
+      - hotfix/*
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - script: |
+      echo "Demo: resolve image tags from ACR / build metadata"
+      cp release-manifest.example.json "$(Build.ArtifactStagingDirectory)/release-manifest.json"
+    displayName: Build manifest placeholder
+
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: $(Build.ArtifactStagingDirectory)/release-manifest.json
+      artifact: release-manifest

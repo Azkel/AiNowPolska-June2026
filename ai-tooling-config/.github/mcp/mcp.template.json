@@ -1,0 +1,22 @@
+{
+  "servers": {
+    "Azure MCP Server (read-only)": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@azure/mcp@latest",
+        "server",
+        "start",
+        "--read-only"
+      ]
+    },
+    "Azure DevOps MCP Server": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@azure-devops/mcp@latest",
+        "<ADO-ORG>"
+      ]
+    }
+  }
+}

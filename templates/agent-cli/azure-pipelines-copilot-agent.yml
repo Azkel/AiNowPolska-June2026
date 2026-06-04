@@ -1,0 +1,30 @@
+# Snippet: Copilot CLI agent step — merge into your pipeline
+# Variables (secret): GITHUB_TOKEN in variable group
+# Optional: AGENT_TIMEOUT_SEC (default 600)
+
+parameters:
+  - name: promptFile
+    type: string
+    default: templates/agent-cli/prompts/pipeline-failure-summary.md
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '20.x'
+    displayName: Use Node.js 20
+
+  - script: |
+      chmod +x templates/agent-cli/run-agent.sh
+      export GITHUB_TOKEN="$(GITHUB_TOKEN)"
+      templates/agent-cli/run-agent.sh "${{ parameters.promptFile }}" "$(Build.ArtifactStagingDirectory)/agent-output"
+    displayName: Run Copilot CLI agent (demo)
+    env:
+      GITHUB_TOKEN: $(GITHUB_TOKEN)
+      AGENT_TIMEOUT_SEC: $(AGENT_TIMEOUT_SEC)
+
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: $(Build.ArtifactStagingDirectory)/agent-output
+      artifact: copilot-agent-output
+    displayName: Publish agent output
+    condition: always()

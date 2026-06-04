@@ -1,0 +1,35 @@
+# Terraform plan/apply — demo stub
+# Production: separate plan and apply stages with environment approvals
+
+trigger:
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - terraform/*
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  terraformVersion: '1.9.0'
+
+stages:
+  - stage: Validate
+    jobs:
+      - job: fmt_validate
+        steps:
+          - task: TerraformInstaller@1
+            inputs:
+              terraformVersion: $(terraformVersion)
+          - script: |
+              cd terraform
+              terraform init -backend=false
+              terraform fmt -check -recursive
+              terraform validate
+            displayName: Terraform fmt & validate
+
+  # - stage: Plan_dev
+  #   dependsOn: Validate
+  #   jobs: ...

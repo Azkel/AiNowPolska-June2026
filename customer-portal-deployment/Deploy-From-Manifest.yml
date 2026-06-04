@@ -1,0 +1,33 @@
+# Deploy from manifest — manual, environment approvals required
+trigger: none
+
+parameters:
+  - name: environment
+    displayName: Target environment
+    type: string
+    default: Acceptance
+    values:
+      - Acceptance
+      - Production
+  - name: manifestRunId
+    displayName: Manifest pipeline run ID
+    type: string
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+  - stage: Deploy
+    jobs:
+      - deployment: deploy_manifest
+        environment: ${{ parameters.environment }}
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - download: current
+                  artifact: release-manifest
+                - script: |
+                    echo "Deploying manifest from run ${{ parameters.manifestRunId }} to ${{ parameters.environment }}"
+                    cat "$(Pipeline.Workspace)/release-manifest/release-manifest.json" || true
+                  displayName: Deploy placeholder

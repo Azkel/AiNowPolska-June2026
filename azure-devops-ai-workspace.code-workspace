@@ -1,0 +1,56 @@
+{
+  "folders": [
+    {
+      "name": "📋 AGENTS (read first)",
+      "path": "."
+    },
+    {
+      "name": "🤖 AI tooling config",
+      "path": "ai-tooling-config"
+    },
+    {
+      "name": "📖 Wiki (ADO)",
+      "path": "customer-portal-wiki"
+    },
+    {
+      "name": "🌐 Frontend",
+      "path": "customer-portal-frontend"
+    },
+    {
+      "name": "⚙️ Backend (.NET)",
+      "path": "customer-portal-backend"
+    },
+    {
+      "name": "🏗️ Infrastructure (Terraform)",
+      "path": "customer-portal-infrastructure"
+    },
+    {
+      "name": "🚀 Deployment",
+      "path": "customer-portal-deployment"
+    },
+    {
+      "name": "📁 Templates",
+      "path": "templates"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.terraform": true
+    },
+    "github.copilot.chat.codeGeneration.instructionsFile": "../ai-tooling-config/.github/copilot-instructions.md",
+    "chat.instructionsFiles": [
+      "../ai-tooling-config/.github/copilot-instructions.md",
+      "../ai-tooling-config/.github/instructions/global-mcp.instructions.md"
+    ]
+  },
+  "extensions": {
+    "recommendations": [
+      "github.copilot",
+      "github.copilot-chat",
+      "hashicorp.terraform",
+      "ms-azuretools.vscode-azureterraform",
+      "ms-dotnettools.csharp",
+      "ms-azuretools.vscode-azureresourcegroups"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+# Frontend CI — demo stub
+pool:
+  vmImage: ubuntu-latest
+
+trigger:
+  branches:
+    include:
+      - main
+      - develop
+      - hotfix/*
+
+pr:
+  branches:
+    include:
+      - develop
+      - main
+
+stages:
+  - stage: Build
+    jobs:
+      - job: placeholder
+        steps:
+          - script: echo "Build frontend — replace with npm ci && npm run build"
+            displayName: Placeholder build

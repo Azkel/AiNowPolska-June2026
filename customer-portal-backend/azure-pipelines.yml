@@ -1,0 +1,19 @@
+# Webinar demo: intentional failure for Scenario A (MCP pipeline investigation)
+# Queue manually or use pipeline "CI-Demo-Fail"
+
+trigger: none
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - script: |
+      echo "Build stage started"
+      dotnet --version || true
+    displayName: Environment check
+
+  - script: |
+      echo "##vso[task.logissue type=error]Demo failure for webinar — Scenario A"
+      echo "Simulated failure: missing variable Demo_ShouldPass (set to true to succeed)"
+      exit 1
+    displayName: Demo intentional failure (Scenario A)

@@ -1,0 +1,34 @@
+# AGENTS.md — Workspace: <PROGRAM-NAME>
+
+DevOps-focused AI assistance across multiple repositories.
+
+## Workspace structure
+
+| Folder / repo | Role |
+|---------------|------|
+| `<app-frontend>/` | UI |
+| `<app-backend>/` | API |
+| `<app-infrastructure>/` | Terraform |
+| `<app-deployment>/` | Manifest-based Acc/Prod |
+| `<wiki-repo>/` | Azure DevOps Wiki (git) |
+| `<ai-tooling-config>/` | Shared Copilot + MCP + skills |
+
+## MCP-first (read-only)
+
+| Need | Server |
+|------|--------|
+| Work items, pipelines, wiki | Azure DevOps MCP — org `<ADO-ORG>`, project `<ADO-PROJECT>` |
+| Azure resources | Azure MCP with `--read-only` |
+
+See `<ai-tooling-config>/.github/instructions/global-mcp.instructions.md`.
+
+## Operating rules
+
+1. Plan non-trivial changes in `docs/change-YYYY-MM-DD-*.md` first.
+2. Wiki Mermaid: `::: mermaid` … `:::` (ADO syntax).
+3. No secrets in git; no autonomous apply/deploy/commit.
+4. Cross-repo changes: publish a change map (repos, order, rollback).
+
+## Environments
+
+`dev` → `tst` → `acc` → `prod` — tfvars and ADO environment names documented in wiki.

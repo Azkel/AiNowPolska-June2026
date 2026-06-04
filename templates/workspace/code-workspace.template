@@ -1,0 +1,25 @@
+{
+  "folders": [
+    { "name": "AGENTS", "path": "<WORKSPACE-ROOT>" },
+    { "name": "AI config", "path": "<WORKSPACE-ROOT>/ai-tooling-config" },
+    { "name": "Wiki", "path": "<WORKSPACE-ROOT>/<wiki-repo>" },
+    { "name": "Frontend", "path": "<WORKSPACE-ROOT>/<app-frontend>" },
+    { "name": "Backend", "path": "<WORKSPACE-ROOT>/<app-backend>" },
+    { "name": "Infrastructure", "path": "<WORKSPACE-ROOT>/<app-infrastructure>" },
+    { "name": "Deployment", "path": "<WORKSPACE-ROOT>/<app-deployment>" }
+  ],
+  "settings": {
+    "chat.instructionsFiles": [
+      "<WORKSPACE-ROOT>/ai-tooling-config/.github/copilot-instructions.md",
+      "<WORKSPACE-ROOT>/ai-tooling-config/.github/instructions/global-mcp.instructions.md"
+    ]
+  },
+  "extensions": {
+    "recommendations": [
+      "github.copilot",
+      "github.copilot-chat",
+      "hashicorp.terraform",
+      "ms-dotnettools.csharp"
+    ]
+  }
+}

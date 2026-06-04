@@ -1,0 +1,41 @@
+# Component CI — demo stub (simplified from real multi-stage pipelines)
+# develop: build + push image + deploy Dev → Test
+# main / hotfix: build + push only — Acc/Prod via customer-portal-deployment
+
+pool:
+  vmImage: ubuntu-latest
+
+trigger:
+  branches:
+    include:
+      - main
+      - develop
+      - hotfix/*
+
+pr:
+  branches:
+    include:
+      - develop
+      - main
+
+# resources:
+#   repositories:
+#     - repository: templates
+#       type: git
+#       name: Developer_Guidelines/pipeline-templates
+
+stages:
+  - stage: Build
+    jobs:
+      - job: dotnet_build
+        steps:
+          - task: UseDotNet@2
+            inputs:
+              packageType: sdk
+              version: 8.x
+          - script: dotnet build src/Portal.Api/Portal.Api.csproj -c Release
+            displayName: dotnet build
+
+  # - stage: Deploy_Dev
+  #   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/develop'))
+  #   ...
