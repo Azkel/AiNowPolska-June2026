@@ -27,6 +27,8 @@ Prefix: `[feature]`, `[fix]`, `[breaking]`, or `[noSemVer]` at start of PR title
 
 Use ADO MCP: `pipelines_get_build_definitions`, `pipelines_get_builds`, `pipelines_get_build_log`.
 
+Copilot prompts: `investigate-failed-build`, `azure-pipeline-review`. Agent: `ado-pipeline-investigator`.
+
 ## Safety
 
 Propose YAML diffs only; do not queue runs via MCP unless explicitly approved.

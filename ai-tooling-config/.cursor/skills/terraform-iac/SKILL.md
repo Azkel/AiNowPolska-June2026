@@ -28,3 +28,5 @@ description: >-
 ## MCP
 
 Use Azure MCP read-only to verify resource names or SKUs when unsure; do not create resources via MCP.
+
+Prompt: `terraform-plan-review`. Agent: `terraform-plan-reviewer`. Skill: `devops-change-plan` for cross-repo IaC changes.
