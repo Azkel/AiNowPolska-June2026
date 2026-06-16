@@ -7,7 +7,7 @@ Materials for **[AI Now Polska webinar #2](https://www.sysopspolska.pl/event/ai-
 | **Speaker** | Michał Smyk — DevOps Cluster Lead, SoftServe Poland |
 | **Language** | Polish |
 | **Presentation** | [Slides (PDF)](https://smyk.it/files/from-autocomplete-to-ai-native-engineering.pdf) |
-| **Blog post** | *Coming soon — [English notes](https://blog.smyk.it/posts/2026/ai-now-polska-azure-devops-tooling/) on blog.smyk.it* |
+| **Blog post** | *Coming soon — [English notes](#) on blog.smyk.it* |
 | **Recording** | *Coming soon — link will be added here* |
 | **All talks** | [blog.smyk.it/talks](https://blog.smyk.it/talks/) |
 
