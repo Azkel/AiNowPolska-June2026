@@ -7,8 +7,9 @@ Materials for **[AI Now Polska webinar #2](https://www.sysopspolska.pl/event/ai-
 | **Speaker** | Michał Smyk — DevOps Cluster Lead, SoftServe Poland |
 | **Language** | Polish |
 | **Presentation** | [Slides (PDF)](https://smyk.it/files/from-autocomplete-to-ai-native-engineering.pdf) |
-| **Blog post** | *Coming soon — [English notes](#) on blog.smyk.it* |
+| **Blog post** | *Coming soon — on blog.smyk.it* |
 | **Recording** | *Coming soon — link will be added here* |
+| **Questions** | [LinkedIn](https://www.linkedin.com/in/michal-smyk/) |
 | **All talks** | [blog.smyk.it/talks](https://blog.smyk.it/talks/) |
 
 Live demo topics: multi-repo workspace, MCP for Azure DevOps and Azure, `AGENTS.md` project rules, GitHub Copilot / Cursor setup — shown from a terminal, without “magic AI” slides.
